@@ -3,7 +3,7 @@
 import requests
 import feedparser
 import random
-from config import TELEGRAM_CHANNEL_ID
+from config import TELEGRAM_CHAT_ID
 
 # Free RSS / news sources
 NEWS_SOURCES = [
