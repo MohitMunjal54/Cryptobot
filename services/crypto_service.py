@@ -2,7 +2,7 @@
 import requests
 import os
 
-TELEGRAM_CHANNEL_ID = os.getenv("TELEGRAM_CHANNEL_ID")
+TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 
 def post_prices(bot):
     try:
@@ -18,7 +18,7 @@ def post_prices(bot):
         sol_inr = data['solana']['inr']
 
         msg = f"☕ Good morning family!\n\n📈 Prices:\nBTC: ${btc_usd} / ₹{btc_inr}\nETH: ${eth_usd} / ₹{eth_inr}\nSOL: ${sol_usd} / ₹{sol_inr}\n\n— ViralCryptoInsights"
-        bot.send_message(chat_id=TELEGRAM_CHANNEL_ID, text=msg)
+        bot.send_message(chat_id=TELEGRAM_CHAT_ID, text=msg)
 
     except Exception as e:
         print("Error in post_prices:", e)
@@ -33,7 +33,7 @@ def post_market_snapshot(bot):
         altcap = 100 - btc_dom - eth_dom
 
         msg = f"📊 Market Snapshot:\nBTC Dominance: {btc_dom:.2f}%\nETH Dominance: {eth_dom:.2f}%\nAltcoins: {altcap:.2f}% of market\n\n— ViralCryptoInsights"
-        bot.send_message(chat_id=TELEGRAM_CHANNEL_ID, text=msg)
+        bot.send_message(chat_id=TELEGRAM_CHAT_ID, text=msg)
 
     except Exception as e:
         print("Error in post_market_snapshot:", e)
