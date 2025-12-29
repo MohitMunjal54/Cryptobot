@@ -10,7 +10,8 @@ from services.learning_service import post_learning
 from services.ta_service import post_ta
 from community.polls_engine import weekend_poll
 from services.events_service import post_crypto_events
-
+from services.whale_service import post_whale_alert
+from services.etf_service import post_etf_update
 
 
 tz = timezone("Asia/Kolkata")
@@ -30,7 +31,12 @@ def start_scheduler(bot):
     scheduler.add_job(lambda: weekend_poll(bot), 'cron', day_of_week='sat', hour=20)
     scheduler.add_job(lambda: good_night(bot), 'cron', hour=21, minute=30)
     scheduler.add_job(lambda: post_crypto_events(bot), 'cron', hour=10, minute=30)
-    from services.events_service import post_crypto_events
+
+    # Whale alerts: daily at 14:00 IST
+    scheduler.add_job(lambda: post_whale_alert(bot), 'cron', hour=14, minute=0)
+
+    # ETF updates: weekly Monday 12:30 IST
+    scheduler.add_job(lambda: post_etf_update(bot), 'cron', day_of_week='mon', hour=12, minute=30)
 
 
     scheduler.start()
