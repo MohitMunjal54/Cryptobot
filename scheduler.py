@@ -9,6 +9,9 @@ from services.news_service import top_news
 from services.learning_service import post_learning
 from services.ta_service import post_ta
 from community.polls_engine import weekend_poll
+from services.events_service import post_crypto_events
+
+
 
 tz = timezone("Asia/Kolkata")
 
@@ -26,5 +29,5 @@ def start_scheduler(bot):
     scheduler.add_job(lambda: post_ta(bot), 'cron', hour=18, minute=0+jitter())
     scheduler.add_job(lambda: weekend_poll(bot), 'cron', day_of_week='sat', hour=20)
     scheduler.add_job(lambda: good_night(bot), 'cron', hour=21, minute=30)
-
+    scheduler.add_job(lambda: post_crypto_events(bot), 'cron', hour=10, minute=30)
     scheduler.start()
