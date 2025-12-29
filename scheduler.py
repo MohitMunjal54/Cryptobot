@@ -30,4 +30,7 @@ def start_scheduler(bot):
     scheduler.add_job(lambda: weekend_poll(bot), 'cron', day_of_week='sat', hour=20)
     scheduler.add_job(lambda: good_night(bot), 'cron', hour=21, minute=30)
     scheduler.add_job(lambda: post_crypto_events(bot), 'cron', hour=10, minute=30)
+    from services.events_service import post_crypto_events
+
+
     scheduler.start()
