@@ -24,6 +24,7 @@ TA_FEEDS = [
     "https://cointelegraph.com/tags/technical-analysis/rss"
 ]
 
+ETHERSCAN_API_KEY = os.getenv("ETHERSCAN_API_KEY", "")
 # Timezone
 TIMEZONE = "Asia/Kolkata"
 
