@@ -6,6 +6,7 @@ requests==2.26.0
 beautifulsoup4==4.10.0
 lxml==4.6.5
 feedparser==6.0.8
-gensim==4.2.0
-numpy==1.23.5
-scipy==1.10.1
+
+gensim==3.8.3
+numpy==1.21.6
+scipy==1.7.3
