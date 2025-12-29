@@ -1,8 +1,8 @@
 python-telegram-bot==20.6
 APScheduler==3.11.1
 feedparser==6.0.10
-gensim==4.3.1
+gensim==4.2.2
 pytz==2023.3
 requests==2.32.0
 beautifulsoup4==4.12.2
-lxml==4.9.3
+lxml==4.9.2
