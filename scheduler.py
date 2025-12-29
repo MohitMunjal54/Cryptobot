@@ -1,5 +1,6 @@
 from apscheduler.schedulers.blocking import BlockingScheduler
 from pytz import timezone
+from config import TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
 from datetime import datetime
 from services import (
     crypto_service,
