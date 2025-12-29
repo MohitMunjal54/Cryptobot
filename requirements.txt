@@ -1,8 +1,10 @@
-python-telegram-bot==20.7
+python-telegram-bot==20.4
 requests
 feedparser
-apscheduler
-pytz
+APScheduler
 holidays
-gensim
+pytz
 beautifulsoup4
+gensim
+lxml
+python-dateutil
