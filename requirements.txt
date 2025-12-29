@@ -5,3 +5,4 @@ apscheduler
 pytz
 holidays
 gensim
+beautifulsoup4
