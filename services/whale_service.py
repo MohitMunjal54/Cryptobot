@@ -1,7 +1,7 @@
 # services/whale_service.py
 import requests
 import os
-from utils.cache import load_cache, save_cache
+from cache import load_cache, save_cache
 
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 
