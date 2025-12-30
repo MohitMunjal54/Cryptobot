@@ -7,7 +7,7 @@ TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 
 def post_whale_alerts(bot):
     try:
-        cache = load_cache()
+        cache = load_cache("whale_alerts", default=[]) 
         url = "https://api.whale-alert.io/v1/transactions?api_key=demo&min_value=500000&currency=btc"  # free demo API
         data = requests.get(url).json()
 
